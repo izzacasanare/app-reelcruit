@@ -1,22 +1,21 @@
 import { defineConfig } from 'mspack'
 import react from '@mspbots/react'
 
-
 export default defineConfig({
   publicDir: 'public',
   plugins: [
     react({
       strategy: 'default',
-      
+
       opt: {
         minify: true,
         treeshake: true,
       },
-      
+
       system: {
         app: {
-          name: 'MSPBots App',
-          title: 'MSPBots React Template',
+          name: 'Reelcruit',
+          title: 'Reelcruit — Async Video Screening',
           icon: 'images/logo.svg',
           favicon: 'favicon.svg',
         },
@@ -34,25 +33,52 @@ export default defineConfig({
           mode: 'vertical',
           collapsible: true,
           defaultCollapsed: false,
-
           header: {
-            enabled:true,
-            title: ({ mode }) => mode === 'production' ? '' : '⚡ DEV',
+            enabled: true,
+            title: ({ mode }) => mode === 'production' ? 'Reelcruit' : '⚡ DEV — Reelcruit',
           },
-
           toolbar: {
             settingsDisabled: true,
             languageDisabled: true,
             fullscreenDisabled: true,
             notificationsDisabled: true,
-        
             disabledTooltip: '⚡ DEV',
           },
         },
+        navigation: [
+          {
+            title: 'Jobs',
+            path: '/jobs',
+            icon: 'Briefcase',
+          },
+        ],
+        routes: [
+          {
+            path: '/',
+            redirect: '/jobs',
+          },
+          {
+            path: '/jobs',
+            page: 'Jobs',
+          },
+          {
+            path: '/jobs/:id',
+            page: 'JobDetail',
+          },
+          {
+            path: '/interview/:token',
+            page: 'CandidateInterview',
+            layout: false,
+          },
+          {
+            path: '/review/:jobId',
+            page: 'ReviewDashboard',
+          },
+        ],
       },
     }),
   ],
-  
+
   server: {
     cors: true,
     headers: {
