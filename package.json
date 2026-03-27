@@ -36,12 +36,14 @@
     "@mspbots/tsconfig": "200.0.0",
     "@mspbots/routes": "204.0.0"
   },
-  "manifest": {
-    "icon": "📦",
-    "hasBackend": true,
-    "permissions": {},
-    "version": "0.1.0",
-    "name": "app-reelcruit"
+ "manifest": {
+  "icon": "🎬",
+  "hasBackend": true,
+  "permissions": {},
+  "version": "0.1.0",
+  "name": "app-reelcruit",
+  "id": "reelcruit2025mspbots01"
+}
   },
   "scripts": {
     "predev": "cd service && deno install",
