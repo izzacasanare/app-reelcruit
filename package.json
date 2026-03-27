@@ -39,10 +39,25 @@
  "manifest": {
   "icon": "🎬",
   "hasBackend": true,
-  "permissions": {},
   "version": "0.1.0",
   "name": "app-reelcruit",
-  "id": "reelcruit2025mspbots01"
+  "id": "reelcruit2025mspbots01",
+  "permissions": {
+    "net": ["20.241.40.252:15432"],
+    "env": true,
+    "imports": [
+      "drizzle-orm",
+      "drizzle-orm/pg-core",
+      "drizzle-orm/postgres-js",
+      "postgres",
+      "drizzle-kit"
+    ],
+    "db": {
+      "user": "user_reelcruit2025mspbots01",
+      "password": "pass_reelcruit2025mspbots01"
+    }
+  }
+}
 }
   },
   "scripts": {
