@@ -7,7 +7,7 @@ import {
   Field, FieldLabel, FieldContent,
   Empty, EmptyHeader, EmptyTitle,
 } from '@mspbots/ui';
-import { ArrowLeft, Copy, Check, Plus, Trash2, Users, ListChecks } from 'lucide-react';
+import { ArrowLeft, Copy, Check, Plus, Trash2, Users, ListChecks, BarChart2 } from 'lucide-react';
 
 type Job = {
   id: string;
@@ -122,6 +122,10 @@ export default function JobDetail() {
               Created {new Date(job.createdAt).toLocaleDateString()}
             </p>
           </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <Button variant="outline" onClick={() => navigate(`/review/${id}`)}>
+              <BarChart2 size={14} style={{ marginRight: 6 }} />Review responses
+            </Button>
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
               <Button><Plus size={14} style={{ marginRight: 6 }} />Add candidate</Button>
